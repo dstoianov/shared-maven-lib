@@ -1,0 +1,23 @@
+= Shared Maven Lib
+:icons: font
+:sectnums:
+:sectnumlevels: 5
+:toc: left
+:toclevels: 4
+:toc-title: Table of Contents
+
+== Requirements
+
+. Git
+. Java JDK 11
+. Apache Maven v3.6.3 or above - *optional
+
+
+
+== Add maven wrapper
+
+```bash
+mvn --version
+mvn -N io.takari:maven:wrapper
+mvn -N io.takari:maven:wrapper -Dmaven=3.8.2
+```
