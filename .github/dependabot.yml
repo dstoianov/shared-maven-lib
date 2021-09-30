@@ -1,0 +1,9 @@
+#  Validate your .dependabot/config.yml file
+#  https://dependabot.com/docs/config-file/validator/
+
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
