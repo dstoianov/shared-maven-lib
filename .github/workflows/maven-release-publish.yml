@@ -38,8 +38,8 @@ jobs:
           maven-args: "-Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip -DdockerCompose.skip"
           # Release
           maven-repo-server-id: ${MAVEN_SERVER_ID}
-          maven-repo-server-username: ${GITHUB_USERNAME}
-          maven-repo-server-password: ${GITHUB_TOKEN}
+          maven-repo-server-username: dstoianov
+          maven-repo-server-password: ${{ secrets.GITHUB_TOKEN }}
           maven-release-args: "-Dskip.unit.tests=true -Dskip.integration.tests=true"
 
           # Publish artifacts to GitHub Packages
