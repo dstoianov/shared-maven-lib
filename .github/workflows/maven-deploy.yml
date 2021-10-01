@@ -57,10 +57,10 @@ jobs:
           release-branch-name: "master"
           git-release-bot-name: "release-bot"
           git-release-bot-email: "release-bot@github.com"
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          #          access-token: ${{ secrets.DEPLOY_GITHUB_TOKEN }}
+          #          access-token: ${{ secrets.GITHUB_TOKEN }} -> 401 Unauthorized -> [Help 1]
+          access-token: ${{ secrets.DEPLOY_GITHUB_TOKEN }}
           #          access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-          maven-args: "-Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip -DdockerCompose.skip"
+#          maven-args: "-Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip -DdockerCompose.skip"
 #          # Publish artifacts to GitHub Packages
 #          maven-publish-args: "-Dskip.unit.tests=true -Dskip.integration.tests=true"
 #          maven-release-publish: "true"
