@@ -2,7 +2,7 @@
 # https://github.com/marketplace/actions/github-tag
 # https://github.com/marketplace/actions/create-a-release
 
-name: Publish package to GitHub Packages
+name: "Publish package to GitHub Packages"
 
 on:
   release:
