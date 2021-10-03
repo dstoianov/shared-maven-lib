@@ -13,6 +13,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout
@@ -22,9 +25,17 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - run: mvn --batch-mode --update-snapshots verify
+          cache: 'maven'
+      - name: Build/Verify with Maven
+        run: mvn --batch-mode --update-snapshots verify
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v2
         with:
           name: Package
           path: staging
+
+
