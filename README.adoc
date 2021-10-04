@@ -25,3 +25,12 @@ mvn -N io.takari:maven:wrapper -Dmaven=3.8.2
 
 test commit
 https://github.com/gh-a-sample/github-actions-maven-release-sample
+
+
+Git delete Tags
+
+```bash
+https://gist.github.com/mobilemind/7883996
+git ls-remote --tags origin
+git push --delete origin common-lib-0.1.7
+```
