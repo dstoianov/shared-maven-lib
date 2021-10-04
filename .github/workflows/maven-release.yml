@@ -50,6 +50,8 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
 
       - name: Publish package
-        run: mvn --batch-mode clean deploy -Dversion=${{ steps.tag_version.outputs.new_tag }}
+        run: |
+        mvn --batch-mode versions:set -DnewVersion=${{ steps.tag_version.outputs.new_tag }}
+        mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
