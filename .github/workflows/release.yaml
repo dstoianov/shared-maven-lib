@@ -37,6 +37,7 @@ jobs:
         run: "echo 'Last tag ver: ${{ steps.tag_version.outputs.new_tag }}'"
       - name: Publish package
         run: |
+          env | sort
           mvn --batch-mode versions:set -DnewVersion=${{ steps.tag_version.outputs.new_tag }}
           mvn --batch-mode deploy
         env:
