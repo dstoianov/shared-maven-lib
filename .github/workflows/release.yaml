@@ -31,11 +31,13 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Git get latest TAG, Set output
-        id: vars
+        id: git_last_tag
         run: echo ::set-output name=tag::$(git describe --abbrev=0)
       - name: Check output
-        env:
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+        run: "echo 'Last tag ver: ${{ steps.git_last_tag.outputs.tag }}'"
+      - name: Publish package
         run: |
-          echo $RELEASE_VERSION
-          echo ${{ steps.vars.outputs.tag }}
+          mvn --batch-mode versions:set -DnewVersion=${{ steps.git_last_tag.outputs.new_tag }}
+          mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
