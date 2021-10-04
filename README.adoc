@@ -22,4 +22,6 @@ mvn -N io.takari:maven:wrapper -Dmaven=3.8.2
 
 //-Ddetail=true
 
+
+test commit
 https://github.com/gh-a-sample/github-actions-maven-release-sample
