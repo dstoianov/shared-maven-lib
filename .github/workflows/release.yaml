@@ -30,9 +30,9 @@ jobs:
           maven-args: "-Dmaven.javadoc.skip=true -DskipTests -DskipITs -Dmaven.deploy.skip=true"
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Set output
+      - name: Git get latest TAG, Set output
         id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo ::set-output name=tag::$(git describe --abbrev=0)
       - name: Check output
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
