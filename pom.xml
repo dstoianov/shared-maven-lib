@@ -4,7 +4,7 @@
 
     <groupId>se.techinsight</groupId>
     <artifactId>common-lib</artifactId>
-    <version>0.1.6</version>
+    <version>0.1.7-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>common-lib</name>
@@ -74,7 +74,7 @@
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>git@github.com:${git.repository}.git</url>
         <!--        <url>https://github.com/${git.repository}</url>-->
-        <tag>0.1.6</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
