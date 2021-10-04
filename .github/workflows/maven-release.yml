@@ -27,8 +27,9 @@ jobs:
         env:
           JAVA_HOME: /usr/lib/jvm/java-11-openjdk/
         with:
-          git-release-bot-name: "release-bot"
-          git-release-bot-email: "release-bot@github.com"
+#          git-release-bot-name: "release-bot"
+          #          git-release-bot-email: "release-bot@github.com"
           maven-args: "-DskipTests -DskipITs"
+          access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
