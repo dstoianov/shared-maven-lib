@@ -12,8 +12,6 @@
 . Java JDK 11
 . Apache Maven v3.6.3 or above - *optional
 
-
-
 == Add maven wrapper
 
 ```bash
@@ -21,3 +19,7 @@ mvn --version
 mvn -N io.takari:maven:wrapper
 mvn -N io.takari:maven:wrapper -Dmaven=3.8.2
 ```
+
+//-Ddetail=true
+
+https://github.com/gh-a-sample/github-actions-maven-release-sample

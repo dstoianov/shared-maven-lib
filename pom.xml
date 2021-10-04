@@ -55,6 +55,7 @@
                     <version>2.5.3</version>
                     <configuration>
                         <scmCommentPrefix>[ci skip]</scmCommentPrefix>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
             </plugins>
@@ -72,8 +73,8 @@
     <scm>
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
-        <!--        <url>git@github.com:${git.repository}.git</url>-->
-        <url>https://github.com/${git.repository}</url>
+        <url>git@github.com:${git.repository}.git</url>
+        <!--        <url>https://github.com/${git.repository}</url>-->
         <tag>HEAD</tag>
     </scm>
 
