@@ -28,14 +28,12 @@
             <version>1.18.20</version>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.8.1</version>
         </dependency>
     </dependencies>
-
 
     <build>
         <pluginManagement>
@@ -55,7 +53,6 @@
                     <version>2.5.3</version>
                     <configuration>
                         <scmCommentPrefix>[ci skip]</scmCommentPrefix>
-                        <tagNameFormat>@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
             </plugins>
