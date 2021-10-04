@@ -51,7 +51,7 @@ jobs:
 
       - name: Publish package
         run: |
-        mvn --batch-mode versions:set -DnewVersion=${{ steps.tag_version.outputs.new_tag }}
-        mvn --batch-mode deploy
+          mvn --batch-mode versions:set -DnewVersion=${{ steps.tag_version.outputs.new_tag }}
+          mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
