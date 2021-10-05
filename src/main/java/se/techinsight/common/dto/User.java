@@ -1,4 +1,4 @@
-package se.techinsight.common;
+package se.techinsight.common.dto;
 
 import lombok.Data;
 
